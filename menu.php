@@ -29,21 +29,9 @@ require 'header.php';
   //convert array to json
   $jsonData=json_encode($data_arr, JSON_PRETTY_PRINT);
   file_put_contents('menulist.json', $jsonData);
-  header("location:index.php");
+  header("location:menulist.php");
   ?>
-  <table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Photo</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
+ 
   <?php
   require 'footer.php';
 ?>

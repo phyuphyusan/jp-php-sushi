@@ -1,17 +1,17 @@
-[
-    {
+{
+    "0": {
         "name": "Salamon Sushi",
         "price": "5000",
         "photo": "photo\/s1.jpeg"
     },
-    {
-        "name": "Sushi",
-        "price": "2000",
-        "photo": "photo\/s.jpeg"
-    },
-    {
+    "2": {
         "name": "Onigiri",
         "price": "3000",
         "photo": "photo\/s3.jpg"
+    },
+    "3": {
+        "name": "Fish Sushi",
+        "price": "2500",
+        "photo": "photo\/s.jpeg"
     }
-]
+}

@@ -40,13 +40,72 @@ $(document).ready(function(){
 					`;
 				})
 				$('#showCart').html(html);
+
+				//table show
+				html='';
+				$.each(menuObjArray,function(i,v){
+					html+=`<tr>
+					<td>${j++}</td>
+					<td>${v.photo}</td>
+					<td>${v.name}</td>
+					<td>${v.price}</td>
+					<td>
+					<button class="btn btn-outline-primary"  >
+					<i class="fas fa-info-circle"></i>
+					</button>
+					<button class="btn btn-outline-warning editMenu" id="edit_student"  data-id="${i}"
+					>
+					<i class="fas fa-edit"></i>
+					</button>
+					<button class="btn btn-outline-danger delete" data-id="${i}">
+					<i class="fas fa-trash-alt"></i>
+					</button>
+					</td>
+					</tr>`;
+				})
+				$('#table_data').html(html);
+				 // header("location:menulist.php");
 			}
 		})
 	}
 
-	$('tbody').on('click','.delete',function(){
+		// Delete
+	$('#table_data').on('click','.delete',function(){
 		var id= $(this).data('id');
 		console.log(id);
-	})
+		var ans = confirm('Are you sure you want to delete')
+		if(ans){
+			$.post('deletemenu.php',{id:id},function(data){
+				getMenulist();
+
+			})
+
+		}
+	});
+	// Edit
+
+	$('#table_data').on('click','.editMenu',function(){
+		var id= $(this).data('id');
+
+		$.get('menulist.json',function(response){
+			var menuObjArray=JSON.parse(response)
+
+			var name=menuObjArray[id].name;
+			var price=menuObjArray[id].price;
+
+			console.log("Name ="+name);
+			console.log("Price ="+price);
+			
+			$('#edit_name').val(name);
+			$('#edit_price').val(price);
+
+			//image
+			$('#oldphoto').attr('src',profile);
+
+			$('#edit_id').val(id);
+			$('#edit_oldprofile').val(profile);
+
+		});
+	});
 
 });

@@ -2,44 +2,11 @@
 require 'header.php';
 ?>
 
-<!-- Add New Student -->
-<div class="container" id="addMenu">
-	<div class="mt-5">
-		<h1 class="text-center mb-5">Add New Menu</h1>
-	</div>
-
-	<form class="container" method="POST" action="menu.php" enctype="multipart/form-data"> <!-- because of include file -->
-		<div class="form-group row">
-			<label for="profile" class="col-sm-2 col-form-label">Photo</label>
-			<div class="col-sm-10">
-				<input type="file" class="form-control-file" id="photo" name="photo">
-			</div>
-		</div>
-		<div class="form-group row">
-			<label for="name" class="col-sm-2 col-form-label">Name</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
-			</div>
-		</div>
-		<div class="form-group row">
-			<label for="email" class="col-sm-2 col-form-label">Price</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="price" name="price">
-			</div>
-		</div>
-		<div class="form-group row">
-			<div class="offset-2 col-md-10">
-				<button type="submit" class="btn btn-outline-primary px-5">Save</button>
-			</div>
-		</div>
-	</form>
-</div>
-
-
 <!-- For Menu -->
 <div class="container">
 	<div class="row mt-5">
 		<div class="col-sm-12 col-md-6 shadow">
+			<h1></h1>
 			<div class="row">
 				<ul class="nav nav-pills mb-3 " id="pills-tab" role="tablist">
 					<li class="nav-item" role="presentation">
@@ -67,8 +34,49 @@ require 'header.php';
 			
 		</div>
 		<!-- payment -->
-		<div class="col-sm-12 col-md-6 shadow">
-		</div>
+		<div class="offset-1 col-sm-12 col-md-5 shadow">
+			<h4 class="text-center pay mt-4">Payment</h4>
+				<div class="table-responsive">
+					<table class="table table-bordered mt-1">
+					  	<thead class="table-active text-dark">
+						   	<tr>
+						      <th>Name</th>
+						      <th>Qty</th>
+						      <th>Price</th>
+						      <th>Remove</th>
+						    </tr>
+					  	</thead>
+ 					 	<tbody>
+	   						<tr>
+	      						<th class="ws">
+	      							WAKASA Sushi
+	      							<p class="k">4800 KS</p>
+	      						</th>
+							    <td>
+							    	<span class="badge badge-dark text-center p-2">+</span> 1 <span class="badge badge-dark p-2"> - </span>
+							    </td>
+							    <td>4800</td>
+							    <td class="pl-4"><span class="badge badge-danger p-2"> X </span></td>
+							</tr>
+		   					<tr>
+			     				<th>Paid</th>
+								<td colspan="3"><input class="form-control" type="text" name="paid" placeholder="Paid Money"></td>   
+							</tr>
+							<tr>
+							     <th>Charges</th>
+							     <td colspan="3"><input class="form-control bg-light" type="text" name="paid" placeholder="Charges Money"></td>
+							</tr>
+							<tr>
+							    <th colspan="4"> <button class="btn btn-outline-light d-block w-100 text-dark">Check Out</button></th>
+							</tr>
+	  					</tbody>
+					</table>
+					
+				</div>			
+	</div>
+
+
+		
 	</div>
 </div>
 
